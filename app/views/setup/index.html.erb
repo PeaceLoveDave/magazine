@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+  <head>
+    <title>HappySeed Generator setup page</title>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"></link>
+    <style>
+      
+      #nav { margin-top: 25px; }
+      @media (max-width: 768px) {
+        .affix {
+            position: static;
+        }
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="panel panel-default affix" id="nav">
+            <div class="panel-heading">
+              Nav
+            </div>
+            <div class="panel-body">
+              <ul class="list-unstyled">
+                <li>
+                  <a href="/rails/mailers">Mailer Previews</a>
+                </li>
+                <li>
+                  <a href="#env">Environment Variables</a>
+                </li>
+                <% @docs.each do |f| %>
+                  <li>
+                    <a href="#<%= f[:name] %>">
+                      <%= f[:name] %>
+                    </a>
+                  </li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <!-- Environment Variables
+          -->
+          <h3>
+            <a name="env">Environment Variables</a>
+          </h3>
+          <pre>
+            <%= @env %>
+          </pre>
+          <!-- rdocs
+          -->
+          <% @docs.each do |f| %>
+            <h3>
+              <a name="<%= f[:name] %>">
+                <%= f[:name] %>
+              </a>
+            </h3>
+            ~ f[:html].html_safe
+            <hr/>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

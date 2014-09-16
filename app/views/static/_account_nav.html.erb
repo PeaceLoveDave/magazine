@@ -1,0 +1,30 @@
+<div class="row account_nav">
+  <div class="col-md-4">
+    <p>
+      Welcome, new to Daft?
+      <a href="#">Subscribe Now</a>
+    </p>
+  </div>
+
+  <div class="col-md-6 col-md-offset-2">
+    <form class="form-inline pull-right">
+
+      <%= link_to 'Create Article', new_article_path %> 
+
+      <input type="text" name="username" placeholder="Username" class="form-control" autocomplete="off"/>
+
+      <div class="input-group">
+        <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="off"/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="circle">
+              ?
+            </span>
+          </button>
+        </span>
+      </div>
+
+      <input type="submit" value="sign in" class="btn btn-primary"/>
+    </form>
+  </div>
+</div> <!-- Account Nav -->

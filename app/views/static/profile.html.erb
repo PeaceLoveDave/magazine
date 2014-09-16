@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <%= render "account_nav" %>
+
+  <%= render "category_nav" %>
+
+  <div class="row profile">
+    <div class="col-md-3 col-md-offset-1 text-center">
+      <img src="http://placehold.it/100x100" class="img-responsive avatar">
+
+      <h1 class="underline">Annie N.<img src="<%= image_url "edit_pencil.png" %>" class="pencil"></h1>
+
+      <h2>Email</h2>
+
+      <p>wwhatever@gmail.com</p>
+
+      <h2>Address</h2>
+      <p>18 Bridge St.<br/>Brooklyn, NY 11201</p>
+
+      <h2>Payment</h2>
+      <p>Real soon</p>
+
+      <h2><a href="#">Update Password</a></h2>
+    </div>
+
+    <div class="col-md-7">
+      <h1>My Bio <img src="<%= image_url "edit_pencil.png" %>" class="pencil"></h1>
+      <p>Words word words words Words word words words Words word words words Words word words words Words word words words Words word words words Words word words words Words word words words Words word words words Words word words words </p>
+
+      <h1 class="underline">My Stories</h1>
+
+      <% 5.times do %>
+        <div class="row underline">
+          <div class="col-md-1">
+            <img src="<%= image_url "icon_tech.png" %>" class="badgeicon">
+          </div>
+          <div class="col-md-10">
+            <h3>Article Title</h3>
+            <p class="byline">Monday</p>
+          </div>
+          <div class="col-md-1">
+            <img src="<%= image_url "edit_pencil.png" %>" class="pencil">
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "ourfooter" %>
+</div>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8"/>
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
+    <%= display_meta_tags :site => 'Seed Site', :title => page_title, :reverse => true %>
+    <meta name="description"/>
+    <meta content="width=device-width" name="viewport"/>
+    <%= stylesheet_link_tag 'splash', :media => nil %>
+    <% # Append your own using content_for :stylesheets %>
+    <%= yield :stylesheets %>
+    <%= javascript_include_tag 'modernizr' %>
+    <%= csrf_meta_tag %>
+  </head>
+  <body data-spy="scroll" data-target="#top">
+    <%= render 'chromeframe' %>
+    <%= render 'flashes' %>
+    <header class="navbar navbar-inverse navbar-fixed-top" id="top" role="<%= :banner %>">
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="<%= :collapse %>" type="<%= :button %>">
+          <span class="sr-only">Toggle navigations</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to '#', :class=>'navbar-brand' do %>
+          <span class="glyphicon glyphicon-leaf"></span>
+          Happy Seed
+        <% end %>
+      </div>
+      <nav class="collapse navbar-collapse" role="<%= :navigation %>">
+        <ul class="nav navbar-nav">
+          <li>
+            <%= link_to 'Top', '#' %>
+          </li>
+          <li>
+            <%= link_to 'Why', '#what' %>
+          </li>
+          <li>
+            <%= link_to 'Feature 1', '#feature1' %>
+          </li>
+          <li>
+            <%= link_to 'Feature 2', '#feature2' %>
+          </li>
+          <li>
+            <%= link_to 'Feature 3', '#feature3' %>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <%= yield %>
+    <%= render 'footer' %>
+    <% # Javascript at the bottom for fast page loading %>
+    <%= render 'javascripts' %>
+    <%= javascript_include_tag 'scrollReveal.js' %>
+    <script>
+      
+        $(function() { 
+          window.scrollReveal = new scrollReveal();
+          $("#top.navbar ul li a[href^='#']").on('click', function(e) {
+            e.preventDefault();
+
+            // store hash
+            var hash = this.hash;
+
+            // animate
+            $('html, body').animate({
+              scrollTop: $(this.hash).offset().top - 95  // 75 is navbar height
+            }, 300, function(){
+              // when done, add hash to url
+              // (default click behaviour)
+              window.location.hash = hash;
+            });
+          });
+        });
+
+
+    </script>
+  </body>
+</html>

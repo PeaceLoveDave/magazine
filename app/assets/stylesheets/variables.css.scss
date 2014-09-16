@@ -1,0 +1,28 @@
+@import url(http://fonts.googleapis.com/css?family=Noto+Sans:400,700%7CNoto+Serif:400,700);
+
+$font-family-sans-serif: 'Noto Sans', "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-family-serif: "Noto Serif", Times, serif;
+
+$font-family-base: $font-family-serif;
+
+
+$brand-primary: #ec6646;
+$dark-gray: #999;
+$sidebar-gray: #f7f5f1;
+
+$pagination-border: none;
+$pagination-color: black;
+$pagination-hover-bg: transparent;
+$pagination-active-bg: transparent;
+$pagination-active-color: $brand-primary;
+$pagination-margin: 20px;
+
+
+// $brand-primary: #ff6000;
+// $body-bg: #747474;
+// $text-color: #d7d7d7;
+
+// $panel-bg: rgba(16,16,16,0.8);
+// $panel-default-border: #000;
+// $panel-default-heading-bg: rgba(64,64,64,0.8);
+// $panel-default-text: #fff;

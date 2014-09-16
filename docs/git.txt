@@ -1,0 +1,36 @@
+
+To list out what is configure in your local machine
+$ git remote -v
+
+origin  https://github.com/wschenk/magazine.git (fetch)
+origin  https://github.com/wschenk/magazine.git (push)
+
+To remove that:
+
+$ git remote rm origin
+
+(origin is the name of the local remote, rm means remove)
+
+To add a new remote:
+
+$ git remote add origin https://github.com/wschenk/magazine.git 
+
+To list out the files that have changed:
+
+$ git status
+
+
+To see what the changes are:
+
+$ git diff
+
+
+To add your changes
+$ git add .
+$ git commit -a -m "Feeling really friendly"
+
+To push your changes to github
+
+$ git push origin master
+
+
