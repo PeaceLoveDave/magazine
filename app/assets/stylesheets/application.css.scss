@@ -22,6 +22,14 @@
     text-transform: uppercase;
   }
 
+  .btn {
+      border-radius: 0;
+      border: none;
+      text-transform: uppercase;
+      font-size: 10px;
+      height: 34px;
+  }
+
   .form-inline {
 
     input.form-control {
@@ -36,13 +44,7 @@
       height: 34px;
     }
 
-    .btn {
-      border-radius: 0;
-      border: none;
-      text-transform: uppercase;
-      font-size: 10px;
-      height: 34px;
-    }
+    
 
     .input-group button {
       background-color: #444;
@@ -127,11 +129,6 @@
 .centered {
   margin-left: auto;
   margin-right: auto;
-}
-
-.latest {
-    background: white;
-    color: black;
 }
 
 .category_index {

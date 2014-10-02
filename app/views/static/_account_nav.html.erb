@@ -7,24 +7,24 @@
   </div>
 
   <div class="col-md-6 col-md-offset-2">
-    <form class="form-inline pull-right">
 
-      <%= link_to 'Create Article', new_article_path %> 
-
-      <input type="text" name="username" placeholder="Username" class="form-control" autocomplete="off"/>
-
-      <div class="input-group">
-        <input type="password" name="password" placeholder="Password" class="form-control" autocomplete="off"/>
-        <span class="input-group-btn">
-          <button class="btn btn-default" type="button">
-            <span class="circle">
-              ?
-            </span>
-          </button>
-        </span>
+    <% if is_signed_in? %>
+      <div class= 'pull-right'>
+        <%= link_to 'Create Article', new_article_path, :class=>'btn btn-default' %> 
+        <%= link_to 'Sign out', sessions_path, method: :delete, :class=> 'btn btn-primary' %>
       </div>
+    
+    <% else %>  
+      <%= form_tag sessions_path, :class=>'form-inline pull-right' do %>
+   
+      <%= text_field_tag :email, 'Username', :class=>'form-control' %>
 
-      <input type="submit" value="sign in" class="btn btn-primary"/>
-    </form>
+      <%= text_field_tag :password, 'Password', :class=>'form-control' %> 
+
+      <%= submit_tag 'Sign In', :class=>'btn btn-primary' %>
+
+       <% end %>
+    <% end %>
+
   </div>
 </div> <!-- Account Nav -->

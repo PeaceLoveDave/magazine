@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
   def category
   	@category = params[:category]
   	@category_articles = Article.where( :category => params[:category] )
-  						.order('created_at desc')
+  						                  .order('created_at desc')
   end
 
   def new
@@ -22,8 +22,8 @@ class ArticlesController < ApplicationController
   	@article = Article.new( article_params )
   	if @article.save
 	  	redirect_to article_path(@article)
-	else
-		render 'new.html.erb'
+	  else
+		  render 'new.html.erb'
 	end
 
   end
@@ -32,7 +32,7 @@ class ArticlesController < ApplicationController
   end
 
   def index
-  	@articles_all = Article.all.order('created_at desc').limit(5)
+  	@articles = Article.order('created_at desc').paginate(:page => params[:page], :per_page => 2)
   end
 
   def edit
@@ -42,15 +42,15 @@ class ArticlesController < ApplicationController
   def update
   	@article = Article.find(params[:id])
   		if @article.update( article_params )
-	  	redirect_to article_path(@article)
-	else
-		render 'edit.html.erb'
-	end
+        redirect_to article_path(@article)
+    	else
+    		render 'edit.html.erb'
+    	end
   end
 
   private
   	def article_params
-  		params.require(:article).permit(:content, :title, :author, :category)
+  		params.require(:article).permit(:content, :title, :category)
   	end
 
   def set_breaking_news

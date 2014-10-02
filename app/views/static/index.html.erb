@@ -18,5 +18,27 @@
     </div>    
   </div>
 
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+
+      <h1>Latest Articles</h1>
+
+      <hr>
+      
+      <% @articles.each do |article| %>
+        <div class="row homepage_article text-left">
+          <div class="col-md-3">
+            <img src="http://placehold.it/400x300" class="img-responsive">
+          </div>
+          <div class="col-md-9">
+            <h2 class="title"><%= link_to article.title, article_path(article) %></h2>
+            <p class="byline">by <%= article.author %> // <%= article.created_at.to_date %></p>
+            <p class="summary"><%= article.content %></p>
+          </div>
+        </div>
+
+        <hr>
+      <% end %>
+
   <%= render "ourfooter" %>
 </div>

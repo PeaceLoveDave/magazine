@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
 
+  post 'mailing_list/sign_up'
+
   resources :articles
+  resource :sessions
 
   get 'category/:category' => 'articles#category', :as=>:category
 
@@ -23,6 +26,8 @@ Rails.application.routes.draw do
   get 'static/new'
 
   get 'static/profile'
+
+  post '/sessions' => 'sessions#create'
 
   root 'articles#index'
   

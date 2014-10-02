@@ -13,9 +13,9 @@
     </div>
   </div>
 
-  <% @breaking_news_items.each do |bumblebee| %>
+  <% @breaking_news_items.each do |article| %>
 
-    <%= render :partial=>'breaking_headline', :locals=> { :breaking_headline=> bumblebee } %>
+    <%= render :partial=>'breaking_headline', :locals=> { :breaking_headline=> article } %>
 
   <% end %> 
 
