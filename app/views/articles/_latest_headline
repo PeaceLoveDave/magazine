@@ -1,0 +1,18 @@
+
+
+<div class="row article_row">
+     <div class="col-md-3 col-md-offset-1">
+        <img src="http://placehold.it/500x500" class="img-responsive"/>
+     </div>
+     
+     <div class="col-md-7">
+
+		<p><%= link_to article.title, article_path(article) %></p>
+
+		<p class="byline">By <%= article.author %> // <%= article.created_at.to_date %></p>
+
+		<p><%= truncate( article.content, length: 300, separator: '') %></p>
+    </div>
+</div>
+
+  <hr class="article-divider">

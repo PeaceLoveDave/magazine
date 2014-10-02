@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   resources :articles
 
+  get 'category/:category' => 'articles#category', :as=>:category
+
   get 'articles/show'
 
   get 'articles/new'

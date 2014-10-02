@@ -27,6 +27,9 @@
               <img src="http://placehold.it/300x150" class="img-responsive"/>
             </div>
           </div>
+
+          <%= link_to 'Edit', edit_article_path(@article) %>
+
           <h1><%= @article.title %></h1>
 
           <p class="byline">By <%= @article.author %></p>
@@ -66,7 +69,7 @@
         </div>
       </div>
     </div>
-    <%= render "static/breaking" %>
+    <%= render "articles/breaking" %>
   </div> <!-- category_index -->
 
   <%= render "static/ourfooter" %>
